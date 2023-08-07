@@ -48,7 +48,9 @@ const GitHubUsersPage = async () => {
                 </Link>
               </td>
               <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <Link href={`/githubusers/${user.login}`} className="btn btn-link">
+                  Go to Repos
+                </Link>
               </th>
             </tr>
           ))}
