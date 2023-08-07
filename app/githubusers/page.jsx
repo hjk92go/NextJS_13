@@ -3,6 +3,11 @@ import Link from "next/link";
 async function fetchGitHunUsers() {
   //https://api.github.com/search/users?q=greg
   const res = await fetch("https://api.github.com/search/users?q=greg");
+
+  //로딩페이지 확인을 위해 일부러 지연시키기위해 데이터 로드전에 await new promise 사용함
+  //아래는 1초후에 해결된다를 의미
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
   const users = await res.json();
   return users.items;
   //서버의 구성요소이기 때문에 개발자도구(브라우저)에서는 아무것도 볼수 없다.
