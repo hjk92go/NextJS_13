@@ -7,7 +7,12 @@
 */
 
 async function fetchRepos(user) {
-  const res = await fetch(`https://api.github.com/users/${user}/repos`);
+  const res = await fetch(`https://api.github.com/users/${user}/repos`, {
+    //재검증 60초
+    next: {
+      revalidate: 60,
+    },
+  });
   const json = await res.json();
   return json;
 }
