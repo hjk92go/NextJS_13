@@ -14,19 +14,22 @@ const Books = async () => {
     <div>
       <h1>Books</h1>
       {books.map((book) => (
-        <div className="card w-96 bg-base-100 shadow-xl" key={book.id}>
-          <figure>
-            <img src={book.img} />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">{book.id}</h2>
-            <p>{book.title}</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">
-                <Link href={book.link}>See in Amazon Now</Link>
-              </button>
+        <div>
+          <div className="card w-96 bg-base-100 shadow-xl" key={book.id}>
+            <figure>
+              <img src={book.img} width="200" height="150" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{book.id}</h2>
+              <p>{book.title}</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">
+                  <Link href={book.link}>See in Amazon Now</Link>
+                </button>
+              </div>
             </div>
           </div>
+          <br />
         </div>
       ))}
     </div>
