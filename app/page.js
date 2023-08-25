@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Books from "./components/Books";
 const HomePage = () => {
   return (
     <div>
-      <h1>Nextjs 13 test page</h1>
-      <button className="btn btn-primary">Primary-Button</button>
-      <ul>
+      <Books />
+      {/* <ul>
         <li>
           <Link href="/">Home </Link>
         </li>
@@ -14,7 +14,7 @@ const HomePage = () => {
         <li>
           <Link href="/about/contact">Contact</Link>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };
